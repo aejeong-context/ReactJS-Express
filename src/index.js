@@ -1,15 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import Board from './components/board';
+import App from './components/App';
 
-class Index extends React.Component{
-    render(){
-        return(<Board name='aa'/>);
-    }C
-}
 
-ReactDOM.render(
-    <Index />,
-    document.getElementById('root')
-  );
+ReactDOM.render(<App />, document.getElementById('root'));
