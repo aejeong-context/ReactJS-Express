@@ -1,10 +1,12 @@
 import React from 'react';
 import ContectInfo from './ContectInfo'
+import ContectDetails from './ContectDetails';
 
 export default class Contect extends React.Component{
     constructor(props){
         super(props); 
         this.state={
+            selectedKey:-1,
             keyword:'',
             contentDate :
             [
@@ -21,14 +23,19 @@ export default class Contect extends React.Component{
             keyword: e.target.value
         });
     }
+    handleClick=(value)=>{
+        this.setState({
+            selectedKey : value
+        });
+    }
 
     render(){
         console.log('keyword now is : '+this.state.keyword);
         const map = (data) => { 
-            data.sort();
+            data.sort((a,b)=> {return a.name > b.name;});
             data = data.filter((contact)=>{ return contact.name.toUpperCase().indexOf(this.state.keyword) > -1;});
             return data.map((contact,key)=>{
-            return (<ContectInfo contact={contact} key={key}/>); 
+            return (<ContectInfo contact={contact} key={key} onClick={()=> this.handleClick(key)}/>); 
         
         });
     };
@@ -40,6 +47,7 @@ export default class Contect extends React.Component{
             <div>
             {map(this.state.contentDate)}
             </div>
+            <ContectDetails isSelected={this.state.selectedKey !== -1} contect={this.state.contentDate[this.state.selectedKey]}/> 
 
             </div>
             );
