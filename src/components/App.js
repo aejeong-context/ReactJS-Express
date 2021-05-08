@@ -1,10 +1,18 @@
-import React from 'react';
+import React,{ Component,PropTypes } from 'react';
 import Board from './board';
 import Contect from './Contect';
 import { hot } from 'react-hot-loader';
 
+const propTypes = {
+    
+};
 
-class App extends React.Component{
+const defaultProps ={
+
+};
+
+
+class App extends Component{
     constructor(props){
         super(props);
         this.state={name:'aejoeng'}
@@ -22,5 +30,8 @@ class App extends React.Component{
          );
     }
 }
+
+App.propTypes = PropTypes;
+App.defaultProps = defaultProps;
 
 export default hot(module) (App);

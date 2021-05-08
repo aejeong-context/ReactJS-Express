@@ -1,9 +1,12 @@
 
 import React,{ useEffect, useState } from 'react';
 
+
+
 function Board(props){
+
     const [phone,setPhone] = useState(0);
-  useEffect(()=>{
+    useEffect(()=>{
       document.title=`aejeong phone number is ${phone}`;
   });
 
@@ -21,5 +24,8 @@ function Board(props){
 
         </div>);
 }
+
+
+
 
 export default Board;

@@ -2,6 +2,9 @@ import React from 'react';
 import ContectInfo from './ContectInfo'
 import ContectDetails from './ContectDetails';
 
+
+
+
 export default class Contect extends React.Component{
     constructor(props){
         super(props); 
