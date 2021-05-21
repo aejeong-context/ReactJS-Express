@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 
 export default class ContactCreate extends React.Component{
     constructor(props){
@@ -35,7 +37,7 @@ export default class ContactCreate extends React.Component{
                 <p>
                     <input type="text" name="name" placeholder="name" value={this.state.name} onChange={this.handleChange}/>
                     <input type="text" name="phone" placeholder="phone" value={this.state.phone} onChange={this.handleChange}/>
-                    <button>Create</button>
+                    <button onClick={this.handleClick}>Create</button>
 
                 </p>
             </div>
@@ -43,9 +45,12 @@ export default class ContactCreate extends React.Component{
     }
 }
 
-ContactCreate.prototype={
-    onCreate: React.prototype.func
+// 이거 오류 걸림;
+
+ContactCreate.propTypes = {
+    onCreate: PropTypes.func
 };
-ContactCreate.defaultProps={
-    onCreate:()=> {console.error('onCreate not defined')}
+
+ContactCreate.defaultProps = {
+    onCreate: () => { console.error('onCreate not defined'); }
 }
