@@ -45,7 +45,6 @@ export default class ContactCreate extends React.Component{
     }
 }
 
-// 이거 오류 걸림;
 
 ContactCreate.propTypes = {
     onCreate: PropTypes.func
