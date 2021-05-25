@@ -42,6 +42,7 @@ import React,{ useState } from 'react';
 // import Counter from './Counter';
 import Info from './Info'; 
 import ProjectList from './ProjectList';
+import Categories from './Categories';
 
 
 const App =()=>{
@@ -49,6 +50,7 @@ const App =()=>{
 
     return (
     <div>
+        <Categories />
         <ProjectList />
         <button onClick={()=>{
         setVisible(!visible);
